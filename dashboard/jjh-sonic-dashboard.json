@@ -1,0 +1,92 @@
+{
+  "version": 1,
+  "header_image": "",
+  "allow_edit": true,
+  "plugins": [],
+  "columns": 3,
+  "panes": [
+    {
+      "title": "LIVE DISTANCE",
+      "width": 2,
+      "row": { "3": 1 },
+      "col": { "3": 1 },
+      "col_width": 2,
+      "widgets": [
+        {
+          "title": "Sonic",
+          "type": "text_widget",
+          "settings": {
+            "title": "현재 거리",
+            "size": "big",
+            "value": "datasources[\"Sonic\"][\"m2m:cin\"][\"con\"]",
+            "sparkline": true,
+            "animate": true,
+            "units": "cm"
+          }
+        },
+        {
+          "title": "Range",
+          "type": "gauge",
+          "settings": {
+            "title": "측정 범위",
+            "value": "Number(datasources[\"Sonic\"][\"m2m:cin\"][\"con\"])",
+            "units": "cm",
+            "min_value": "0",
+            "max_value": "400"
+          }
+        }
+      ]
+    },
+    {
+      "title": "PROXIMITY STATUS",
+      "width": 1,
+      "row": { "3": 1 },
+      "col": { "3": 3 },
+      "col_width": 1,
+      "widgets": [
+        {
+          "title": "Status",
+          "type": "text_widget",
+          "settings": {
+            "title": "물체 상태",
+            "size": "big",
+            "value": "var d=Number(datasources[\"Sonic\"][\"m2m:cin\"][\"con\"]); if(d<20){return \"매우 가까움\";} if(d<50){return \"가까움\";} if(d<150){return \"범위 안\";} return \"안전 거리\";",
+            "sparkline": false,
+            "animate": true,
+            "units": ""
+          }
+        },
+        {
+          "title": "Pipeline",
+          "type": "text_widget",
+          "settings": {
+            "title": "데이터 경로",
+            "size": "regular",
+            "value": "HC-SR04 → nCube → Mobius",
+            "sparkline": false,
+            "animate": false,
+            "units": ""
+          }
+        }
+      ]
+    }
+  ],
+  "datasources": [
+    {
+      "name": "Sonic",
+      "type": "JSON",
+      "settings": {
+        "url": "http://127.0.0.1:7579/Mobius/jjh-sonic/sonic/la",
+        "use_thingproxy": false,
+        "refresh": 1,
+        "method": "GET",
+        "body": "",
+        "headers": [
+          { "name": "Accept", "value": "application/json" },
+          { "name": "X-M2M-RI", "value": "freeboard-sonic" },
+          { "name": "X-M2M-Origin", "value": "Sjjh-sonic" }
+        ]
+      }
+    }
+  ]
+}

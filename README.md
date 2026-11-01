@@ -132,7 +132,6 @@ Windows에서는 `FREEBOARD_DIR`과 필요시 `MOBIUS_DIR`을 지정한 뒤 `scr
 
 현재 구현 완료 범위는 거리 측정, nCube 전송, Mobius 저장, 리소스 조회, Freeboard 시각화까지입니다. 스마트폰 푸시 알림은 향후 확장 항목입니다.
 
-## 보고서
+## 보고서와 데모
 
-현재 5쪽 논문 초안은 [`docs/report-draft.pdf`](docs/report-draft.pdf)에 있습니다. 학번, 최종 YouTube 데모 URL, GitHub URL을 넣은 뒤 제출본으로 교체해야 합니다.
-
+이 저장소에는 재현 가능한 실습 코드와 설정만 공개합니다. 개인 제출용 논문 PDF와 데모 영상 원본은 별도로 관리합니다.

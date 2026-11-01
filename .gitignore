@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Node.js
+node_modules/
+npm-debug.log*
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+authorized_keys
+
+# Runtime output
+*.log
+decode.jpg
+
+# Personal submission documents are kept local by default
+docs/*.pdf
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Third-party local installations
+Mobius/
+freeboard-master/
+nCube-Thyme-Nodejs*/
